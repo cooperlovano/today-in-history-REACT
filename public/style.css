@@ -1,0 +1,318 @@
+
+.eventWrapper{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.eventRoot{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+li {
+  font-size: 12px;
+  padding: 0px;
+  line-height: 14px;
+  margin: 0px;
+}
+
+      /*small screens, hide second half */
+      @media screen and (max-width: 600px) {
+        .credit {
+          margin-bottom: 20px;
+        }
+        .half {
+          width: 100%;
+        }
+        .second_half {
+          display: none !important;
+        }
+        .maincontain {
+          width: 100%;
+        }
+        .month {
+          font-size: 70px;
+        }
+        .day {
+          font-size: 70px;
+        }
+        .year {
+          font-size: 70px;
+          width: 150px;
+        }
+        #event_holder {
+          height: 95px;
+        }
+        .mainRange::-webkit-slider-thumb {
+          width: 35px;
+          height: 20px;
+          border: none;
+        }
+        .small_describer {
+          font-size: 27px;
+          margin-left: 5%;
+        }
+      }
+      /* large screens */
+      @media (min-width: 601px) {
+        .credit {
+          margin-bottom: 50px;
+        }
+        .small_describer {
+          font-size: 37px;
+        }
+        .second_half {
+          display: none;
+        }
+        .half {
+          width: 99.9%;
+        }
+
+        .maincontain {
+          width: 100%;
+        }
+        .month {
+          font-size: 93px;
+        }
+        .day {
+          font-size: 93px;
+        }
+        .year {
+          font-size: 93px;
+          width: 280px;
+        }
+        #event_holder {
+          height: 90px;
+        }
+        .mainRange::-webkit-slider-thumb {
+          width: 25px;
+          height: 40px;
+          border: none;
+        }
+      }
+
+      .half {
+        display: inline-block;
+        min-height: 100%;
+        position: relative;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .second_half {
+        text-align: right;
+        position: absolute;
+        padding-left: 1%;
+      }
+      /* slider customization */
+      .mainRange {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 2px;
+        background: white;
+        outline: none;
+        opacity: 0.8;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+      }
+      .mainRange::-moz-range-thumb {
+        width: 35px;
+        height: 45px;
+        background: red;
+        cursor: pointer;
+      }
+
+      .mainRange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        background: red;
+        cursor: pointer;
+      }
+
+      body {
+        color: white;
+        background-color: black;
+        font-family: Helvetica Neue;
+        font-weight: 400;
+        height: 100%;
+        margin-left: 0px;
+        font-size: 26px;
+        font-family: "Helvetica Neue";
+      }
+      /* text area for the current fact */
+      #event_holder {
+        font-size: 17px;
+        font-weight: 400;
+        text-align: left;
+      }
+
+      h5#recent_year_holder {
+        margin: 0px;
+        transform: rotate(-90deg);
+        margin-right: -18px;
+      }
+      h5#first_year_holder {
+        margin: 0px;
+        transform: rotate(-90deg);
+        margin-left: -15px;
+      }
+      .mainRange {
+        width: 100%;
+        margin-top: 20px;
+      }
+      .month {
+        font-weight: 500;
+        margin-top: -20px;
+        margin: 0px;
+        display: inline-block;
+      }
+      .day {
+        font-weight: 500;
+        margin: 0px;
+      }
+      .year {
+        color: red;
+        font-weight: 500;
+        margin: 0px;
+        display: inline-block;
+      }
+      .title {
+        display: inline-block;
+        margin-top: 10px;
+        color: white;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        margin: 0px;
+        text-align: right;
+      }
+      .fullscreen_title {
+        display: inline-block;
+        margin-top: 10px;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        margin: 0px;
+        height: 177px;
+        text-align: right;
+        float: right;
+      }
+      .start {
+        color: red;
+        float: left;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+      .end {
+        color: red;
+        float: right;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      hr {
+        margin: 0;
+      }
+      .small_describer {
+        display: inline-block;
+        font-weight: 400;
+        margin-top: 10px;
+        margin-bottom: 0px;
+      }
+      .top1 {
+        width: 100%;
+        height: 107px;
+        font-size: 19px;
+        margin-top: -20px;
+        margin: 0px;
+        display: inline-block;
+      }
+      .title_link {
+        color: red;
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 17px;
+        margin: 0px;
+        float: right;
+      }
+      .birth_title {
+        color: red;
+        display: inline-block;
+        margin-top: 10px;
+        font-weight: 400;
+        font-size: 17px;
+        height: 107px;
+        margin: 0px;
+        float: right;
+      }
+      .wiki_links {
+        display: inline-block;
+        margin-top: 10px;
+        color: red;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        margin: 0px;
+        text-align: right;
+      }
+      h4.wiki_links:hover {
+        color: maroon;
+      }
+      .subsidiary_link {
+        color: grey;
+        font-weight: 400;
+        text-decoration: none;
+      }
+      .subsidiary_link:hover {
+        color: white;
+      }
+      .credit {
+        display: inline-block;
+        margin-top: 10px;
+        color: white;
+        font-family: "Helvetica Neue", sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        background-color: black;
+        margin: 0px;
+        text-align: left;
+        margin-top: 30px;
+        position: absolute;
+        bottom: 0px;
+      }
+      .one_third {
+        display: inline-block;
+        width: 31%;
+        margin-left: 0.9%;
+      }
+      .data_toggle {
+        width: 100%;
+        height: 45px;
+        position: fixed;
+        bottom: 5px;
+        text-align: center;
+      }
+      .event_third {
+        width: 30.9%;
+        display: inline-block;
+        background-color: red;
+        margin: 5px;
+        text-align: center;
+      }
+      .death_third {
+        width: 30.9%;
+        display: inline-block;
+        background-color: red;
+        margin: 5px;
+        text-align: center;
+      }
+      .birth_third {
+        width: 30.9%;
+        display: inline-block;
+        background-color: red;
+        margin: 5px;
+        text-align: center;
+      }
