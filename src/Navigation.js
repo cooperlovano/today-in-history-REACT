@@ -1,84 +1,57 @@
 import React from 'react';
 import Event from './event';
-//import Death from './death';
+import Death from './death';
+import Birth from './birth';
+import eventImage from './events.png';
+import deathImage from './deaths.png';
+import birthImage from './births.png';
 
 class Navigation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            eventShown: false,
-            deathShown: false
+            shown: "Event",
         };
         this.handleEventClick = this.handleEventClick.bind(this);
         this.handleDeathClick = this.handleDeathClick.bind(this);
-
+        this.handleBirthClick = this.handleBirthClick.bind(this);
     }
     handleEventClick(props) {
-        this.setState({ eventShown: true });
-        this.setState({ deathShown: false });
+        this.setState({ shown: "Event" });
     }
     handleDeathClick(props) {
-        this.setState({ deathShown: true });
+        this.setState({ shown: "Death" })
     }
-
-
-    /*
-        handleEventClick(props) {
-            this.setState({ deathShown: false });
-            this.setState({ eventShown: true });
-            this.returnCurrent();
-            console.log("EVENT SHOWN VALUE: " + this.state.eventShown);
-            console.log("DEATH SHOWN VALUE: " + this.state.deathShown);
-        }
-        handleDeathClick(props) {
-            this.setState({ eventShown: false });
-            this.setState({ deathShown: true });
-            console.log("EVENT SHOWN VALUE: " + this.state.eventShown);
-            console.log("DEATH SHOWN VALUE: " + this.state.deathShown);
-    
-        }
-        */
-
-
-
+    handleBirthClick(props) {
+        this.setState({ shown: "Birth" })
+    }
     render() {
-        var isEventShown = this.state.eventShown;
-        let currentFrame;
-        console.log(isEventShown);
-        if (isEventShown) {
-            currentFrame = <Event />
-
-        }
-        else {
-            currentFrame = "NOTHING WAS TRIGGERED";
-
-        }
-
-
         return (
-            <div className="data_toggle">
+            <div>
                 <div className="eventRoot">
-                    {currentFrame}</div>
-                <div className="event_third">
-                    <button onClick={this.handleEventClick}>Events</button>
+                    {(() => {
+                        switch (this.state.shown) {
+                            case "Event": return <Event />
+                            case "Death": return <Death />
+                            case "Birth": return <Birth />
+                            default: return <Event />
+                        }
+                    })()}
                 </div>
-                <div className="death_third">
-                    <button onClick={this.handleDeathClick}>Deaths</button>
+                <div>
+                    <button className={this.state.shown === "Event" ? "active event_third" : "event_third"}><img className="buttonImage" src={eventImage} alt="button" onClick={this.handleEventClick}></img></button>
                 </div>
-                <div className="birth_third">
-                    <button onClick={this.handleClick}>Births</button>
+                <div>
+                    <button className={this.state.shown === "Death" ? "active death_third" : "death_third"}><img className="buttonImage" src={deathImage} alt="button" onClick={this.handleDeathClick}></img></button>
+                </div>
+                <div>
+                    <button className={this.state.shown === "Birth" ? "active birth_third" : "birth_third"}><img className="buttonImage" src={birthImage} alt="button" onClick={this.handleBirthClick}></img></button>
                 </div>
 
             </div>
+
+
         );
     }
 }
 export default Navigation;
-
-
-
-//<div className="eventRoot">
-//{this.state.eventHidden && <Event />}</div>
-
-//<div className="eventRoot">
-  //                  {currentFrame}</div>

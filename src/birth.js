@@ -1,13 +1,13 @@
 import React from 'react';
 import GetCurrentDate from './getCurrentDate';
 import Slider from 'react-rangeslider';
+import loadingImage from './loading.gif';
 //default slider styles
 import 'react-rangeslider/lib/index.css';
-import loadingImage from './loading.gif';
 //api
 const API = "https://history.muffinlabs.com/date";
 
-class Death extends React.Component {
+class Birth extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +24,7 @@ class Death extends React.Component {
     componentDidMount() {
         fetch(API)
             .then(response => response.json())
-            .then(data => this.setState({ hits: data.data.Deaths }));
+            .then(data => this.setState({ hits: data.data.Births }));
     }
     arrayInfo(props) {
         if (this.state.hits !== " ") {
@@ -78,4 +78,5 @@ class Death extends React.Component {
         );
     }
 }
-export default Death;
+export default Birth;
+
